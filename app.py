@@ -9,9 +9,9 @@ def hello():
     sleep_time = float(request.args.get('sleep', 0))
     
     # Introduce a delay based on the sleep_time value
-    time.sleep(sleep_time)
+    time.sleep(sleep_time / 1000)
 
-    return f"Slept for {sleep_time} seconds."
+    return f"Slept for {sleep_time} milli seconds."
 
 
 if __name__ == '__main__':
