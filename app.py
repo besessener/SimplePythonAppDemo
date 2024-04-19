@@ -18,7 +18,7 @@ def hello():
     # Generate a random string of the requested size in KB
     response = os.urandom(size_kb * 1024).hex()  # os.urandom returns random bytes, which are then converted to a hex string
 
-    return f"Slept for {sleep_time} milliseconds.\nResponse Size: {size_kb}KB\n\n{response}"
+    return response
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)
