@@ -1,3 +1,4 @@
 flask==3.0.3
 uvicorn==0.29.0
 flask-asyncio==3.4.3
+gunicorn==22.0.0
