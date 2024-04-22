@@ -1,16 +1,16 @@
-from flask import Flask, request
-import time
-import os
+from flask import Flask
+import asyncio
+from flask_asyncio import AsyncFlask
 
-app = Flask(__name__)
+app = AsyncFlask(__name__)  # Use AsyncFlask instead of Flask
 
 @app.route('/')
-def hello():
+async def hello():
     # Retrieve the 'sleep' parameter from the URL, default to 0 if not provided
     sleep_time = float(request.args.get('sleep', 0))
     
     # Introduce a delay based on the sleep_time value
-    time.sleep(sleep_time / 1000)
+    await asyncio.sleep(sleep_time / 1000)
 
     # Retrieve the 'size_kb' parameter from the URL, default to 0 if not provided
     size_kb = int(request.args.get('size_kb', 0))
