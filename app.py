@@ -4,8 +4,8 @@ import os
 
 app = FastAPI()
 
-@app.get("/hello")
-async def hello(sleep: int = 0, size_kb: int = 0):
+@app.get("/")
+async def root(sleep: int = 0, size_kb: int = 0):
     await asyncio.sleep(sleep / 1000)  # Sleep for the requested amount of time (in milliseconds)
     
     # Generate a random string of the requested size in KB
